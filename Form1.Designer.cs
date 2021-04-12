@@ -63,9 +63,9 @@ namespace TimedMathQuiz
             // timeLabel
             // 
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.timeLabel.Location = new System.Drawing.Point(372, 9);
+            this.timeLabel.Location = new System.Drawing.Point(314, 9);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(100, 23);
+            this.timeLabel.Size = new System.Drawing.Size(158, 23);
             this.timeLabel.TabIndex = 0;
             this.timeLabel.Text = "0.00";
             this.timeLabel.Click += new System.EventHandler(this.TimeLabel_Click);
@@ -73,7 +73,7 @@ namespace TimedMathQuiz
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(265, 9);
+            this.label1.Location = new System.Drawing.Point(208, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 1;
@@ -127,8 +127,9 @@ namespace TimedMathQuiz
             this.sum.Location = new System.Drawing.Point(314, 84);
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(120, 35);
-            this.sum.TabIndex = 3;
+            this.sum.TabIndex = 1;
             this.sum.ValueChanged += new System.EventHandler(this.SumUpDown_ValueChanged);
+            this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // minusLeftLabel
             // 
@@ -178,8 +179,9 @@ namespace TimedMathQuiz
             this.minus.Location = new System.Drawing.Point(314, 134);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(120, 35);
-            this.minus.TabIndex = 3;
+            this.minus.TabIndex = 2;
             this.minus.ValueChanged += new System.EventHandler(this.SumUpDown_ValueChanged);
+            this.minus.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // multiplicationLeftLabel
             // 
@@ -231,6 +233,7 @@ namespace TimedMathQuiz
             this.multiplication.Size = new System.Drawing.Size(120, 35);
             this.multiplication.TabIndex = 3;
             this.multiplication.ValueChanged += new System.EventHandler(this.SumUpDown_ValueChanged);
+            this.multiplication.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // divisionLeftLabel
             // 
@@ -280,8 +283,9 @@ namespace TimedMathQuiz
             this.division.Location = new System.Drawing.Point(314, 234);
             this.division.Name = "division";
             this.division.Size = new System.Drawing.Size(120, 35);
-            this.division.TabIndex = 3;
+            this.division.TabIndex = 4;
             this.division.ValueChanged += new System.EventHandler(this.SumUpDown_ValueChanged);
+            this.division.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // startTheQuizButton
             // 
@@ -289,7 +293,7 @@ namespace TimedMathQuiz
             this.startTheQuizButton.Location = new System.Drawing.Point(150, 300);
             this.startTheQuizButton.Name = "startTheQuizButton";
             this.startTheQuizButton.Size = new System.Drawing.Size(160, 40);
-            this.startTheQuizButton.TabIndex = 4;
+            this.startTheQuizButton.TabIndex = 5;
             this.startTheQuizButton.Text = "Start the Quiz!";
             this.startTheQuizButton.UseVisualStyleBackColor = true;
             this.startTheQuizButton.Click += new System.EventHandler(this.startTheQuizButton_Click);
@@ -330,6 +334,7 @@ namespace TimedMathQuiz
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Math Quiz";
+            this.Enter += new System.EventHandler(this.answer_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.sum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.multiplication)).EndInit();
